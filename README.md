@@ -16,6 +16,8 @@ Challenge para Wise Medical
     npx expo start
    ```
 
+   Open browser and go to `http://localhost:8081/` to see the expo app.
+
 3. Run the tests
 
    ```bash
