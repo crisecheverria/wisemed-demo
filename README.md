@@ -34,3 +34,7 @@ Challenge for Wise Medical
    ```
 
    Por cierto, hablo Español. No se porque decidi escribir todo lo anterior y los commits en ingles :)
+
+   Saludos! 🚀
+
+   [Imagen de Ejemplo desde Simulador de iOS](./assets/images/ios-simulator.png)
