@@ -1,25 +1,31 @@
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
 import "react-native-reanimated";
+import { useEffect } from "react";
+import { useFonts } from "expo-font";
 
 import { View, Text, StyleSheet, Image } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import DropDownPicker from "react-native-dropdown-picker";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(null);
-  const [items, setItems] = useState([
-    { label: "Apple", value: "apple" },
-    { label: "Banana", value: "banana" },
-  ]);
+  const [loaded] = useFonts({
+    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+  });
+
+  useEffect(() => {
+    if (loaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded]);
+
+  if (!loaded) {
+    return null;
+  }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.cardContainer}>
         <View style={styles.headerContainer} data-testid="header">
           <View>
@@ -72,20 +78,9 @@ export default function RootLayout() {
             style={styles.faceIcon}
           />
         </View>
-
-        <View style={styles.urgencyContainer}>
-          <DropDownPicker
-            open={open}
-            value={value}
-            items={items}
-            setOpen={setOpen}
-            setValue={setValue}
-            setItems={setItems}
-          />
-        </View>
       </View>
       <StatusBar style="dark" />
-    </SafeAreaView>
+    </View>
   );
 }
 
