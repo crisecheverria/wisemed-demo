@@ -21,7 +21,7 @@ export default function RootLayout() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.cardContainer}>
-        <View style={styles.headerContainer}>
+        <View style={styles.headerContainer} data-testid="header">
           <View>
             <Text style={styles.specialtyText}>Traumatología</Text>
             <Text style={styles.doctorText}>Dr. José Pedro Sans</Text>

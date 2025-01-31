@@ -15,3 +15,9 @@ Challenge para Wise Medical
    ```bash
     npx expo start
    ```
+
+3. Run the tests
+
+   ```bash
+    npm test
+   ```
