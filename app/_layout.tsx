@@ -149,7 +149,9 @@ const styles = StyleSheet.create({
     marginLeft: 16,
   },
   infoCard: {
-    padding: 16,
+    paddingLeft: 16,
+    paddingTop: 8,
+    paddingBottom: 8,
   },
   infoText: {
     fontSize: 14,
@@ -166,7 +168,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   urgencyContainer: {
-    marginTop: 8,
     marginHorizontal: 16,
     paddingTop: 8,
   },
